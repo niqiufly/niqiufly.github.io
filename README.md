@@ -16,7 +16,5 @@
 [新世界](http://niqiufly.github.io/newlife)
 
 
-[新春-移动端](http://niqiufly.github.io/springwish)
-
 
 [时间颜色](http://niqiufly.github.io/timecolor)
