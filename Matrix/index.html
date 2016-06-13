@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     *     { margin:0; padding:0;}
+     body  {background:black;}
+     canvas{display:block;}
+	</style>
+</head>
+<body>
+	<canvas id="c"></canvas>
+	<script>
+      var c=document.getElementById("c");
+      var ctx=c.getContext("2d");
+               /*
+                 Canvas.getContext(contextID)
+                 参数 contextID 指定了您想要在画布上绘制的类型。当前唯一的合法值是 "2d"，它指定了二维绘图，并且导致这个方法返回一个环境对象，该对象导出一个二维绘图 API
+               */
+
+      c.height=window.innerHeight;
+      c.width=window.innerWidth;
+
+      var chinese="0100011111111111111110000 11111111110110000000110  1110000000100101100";
+      chinese=chinese.split("");  
+      
+      var font_size=10;
+      var columns=c.width/font_size;
+          //每一行有多少列  页面宽度除以字体大小，就得到一行有多少字，即多少列
+      var drops=[];
+      for(var x=0;x<columns;x++){ 
+          drops[x]=1;
+      } 
+
+
+      function draw(){
+      	ctx.fillStyle="rgba(0,0,0,0.05)";//1 没有透明度 0 完全透明 
+      	/*
+           通过透明度为0.05的矩形制作渐变效果
+
+          draw()第一次运行，画 第一层0.05透明的矩形，画一行汉字
+
+          draw()第二次运行，画 第二层0.05透明的矩形，画一行汉字 
+              此时第一行汉字已经有点模糊了，因为它上面有一层0.05透明的矩形
+              第二行汉字上面无矩形，完全正常显示
+
+          draw()第三次运行，画 第三层0.05透明的矩形，画一行汉字 
+              此时第一行汉字已经更模糊了，因为它上面有二层0.05透明的矩形
+              此时第二行汉字已经有点模糊了，因为它上面有一层0.05透明的矩形
+              第三行汉字上面无矩形，完全正常显示
+          ......
+          以此类推，来创建文字渐变效果
+          
+
+      	*/
+      	/*
+      	  context.fillStyle=color|gradient|pattern;
+          fillStyle 属性设置或返回用于填充绘画的颜色、渐变或模式。
+
+      	*/
+      	ctx.fillRect(0,0,c.width,c.height);//先画一个窗口大小的  0.05黑色的矩形，用来实现渐变的文字效果
+      	/*
+           fillRect() 方法绘制“已填色”的矩形。默认的填充颜色是黑色。
+      	    ( x 坐标, y 坐标,矩形的宽度以像素计,矩形的高度以像素计)
+      	*/
+
+
+        
+      	ctx.fillStyle="#0f0";//设置字体的颜色
+      	ctx.font=font_size+"px arial";/*设置或返回文本内容的当前字体属性*/
+
+
+      	for(var i=0;i<drops.length;i++){
+            var text=chinese[Math.floor(Math.random()*chinese.length)];//随便取一个汉字
+            ctx.fillText(text,i*font_size,drops[i]*font_size);
+            /*   ______
+              0 |      |  10       20     30
+                |      |
+              10|______|  10       10     10
+      第一行  draw()第一次运行，drops[i]=1
+              第一个字的坐标为(0*10,1*10),相当于在一个边长为10的正方形里。
+              第二个字的坐标为(1*10,1*10),三(2*10,1*10)......
+      第二行  draw()第二次运行，因为drops[i]++，此时drops[i]=2
+              第一个字的坐标为(0*10,2*10),相当于在一个边长为10的正方形里。
+              第二个字的坐标为(1*10,2*10),三(2*10,2*10)......
+
+              fillText() 方法在画布上绘制填色的文本。文本的默认颜色是黑色.
+              (规定在画布上输出的文本,开始绘制文本的 x 坐标位置（相对于画布）,开始绘制文本的 y 坐标位置（相对于画布）,可选  允许的最大文本宽度 以像素计)
+            */
+
+            if(drops[i]*font_size>c.height&&Math.random()>0.975){
+            		drops[i]=0;
+            	}
+            /*
+            当画到底部的时候 第n次运行draw()时，此时如果drops[i]*font_size>c.height， 
+            即大于画布的高时，则从第一行再开始画，改变y的值即可，而y=drops[i]*font_size，
+            所以drops[i]=0
+
+            此时并不是所有列都从第一行开始画，如果随机值Math.random()>0.975，则该列从第一行开始画，其余列则继续在底部看不到的部分画
+
+            无论如何如果drops[i]*font_size>c.height&&Math.random()>0.975，则该i+1列就一定从第一行开始画
+            */
+           
+
+            drops[i]++;//画第i+1列，第drops[i]行，   初始时drops[i]=1
+      	}
+      } 
+
+      setInterval(draw,33);  //每运行一次draw,就画一行
+      /*当画到底部的时候 第n次运行draw()时，此时屏幕已经画满
+
+        当下一次运行draw时，则有的列从头开始画，有的列继续在看不到的底部画，此时才会有黑客帝国的感觉
+      */
+	</script>
+</body>
+</html>

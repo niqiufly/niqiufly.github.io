@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     #search{
+     	width: 540px;
+     	padding:5px;
+     	height: 30px;
+     	line-height: 30px;
+     	color: #999;
+     	font-size: 20px;
+     	border: 1px solid #1111ff;
+
+     }
+     #intro{
+     	width: 540px;
+     	margin: 0;
+     	padding:5px;
+     	border: 1px solid #1111ff;
+     	display: none;
+     }
+     #intro li{
+       list-style: none;
+       height: 30px;
+       font-size: 20px;
+       line-height: 30px;
+       padding: 0;
+     }
+     a{
+     	text-decoration: none;
+     	  color: #999;
+     	  display: block;
+     }
+     a:hover{
+     	background-color: #eee;
+     }
+
+	</style>
+
+</head>
+<body>
+	<input type="text" id="search" >
+	<ul id="intro">
+		<!-- <li><a href="">1122222222222</a></li>
+		<li><a href="">1122222222222</a></li>
+		<li><a href="">1122222222222</a></li> -->
+	</ul>
+	<script type="text/javascript">
+     //  https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=fff&cb=getData
+
+     
+     //https://www.baidu.com/s?wd=hao
+
+     function getData(data){
+     	if(data.s.length){
+		  intro.style.display="block";
+		  intro.innerHTML="";
+		  for(var i=0;i<data.s.length;i++){
+		  	var cLi=document.createElement("li");
+		  	cLi.innerHTML="<a target='_blank' href='https://www.baidu.com/s?wd="+data.s[i]+"'>"+data.s[i]+"</a>";
+		  	intro.appendChild(cLi);
+		  }	
+
+     	}else{
+          	  intro.style.display="none";
+     	}
+     }
+     
+     var search=document.getElementById("search");
+     var intro=document.getElementById("intro");
+     window.onload=function(){
+     	search.onkeyup=function(){
+          if(this.value!=""){
+          	var script=document.createElement("script");
+          	script.src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+this.value+"&cb=getData";
+          	document.body.appendChild(script);
+          }else{
+          	intro.style.display="none";
+          }
+     	}
+
+     }
+	</script>
+	
+</body>
+</html>

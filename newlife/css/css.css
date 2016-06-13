@@ -1,0 +1,714 @@
+﻿     #context{
+      min-width: 1280px;
+      overflow-x:hidden;
+     }
+     *,body{
+          margin:0;
+          padding:0;
+          font-family: "Microsoft YaHei" ! important;
+     }
+     a {
+     	text-decoration: none;
+     	color:#fff;
+     }
+
+     input,button,select,textarea{
+     	outline:none;
+     }
+     textarea{
+     	resize:none
+     }
+
+     #search_activity,.more_details,input[type="submit"]{
+      cursor: pointer;
+     }
+     /* -----------------------------页头--------------------------*/
+     header {height:25px;}
+     header div:first-child{
+          float:left;
+      margin-top:12px;
+      margin-left:58px;
+      width:150px;
+      height:32px;
+      line-height: 32px;
+          font-size: 21px;
+          text-indent: 43px;
+      background:#fff url(../img/book_small.png) no-repeat left center;
+      background-size:auto 100%;
+      transition:transform 2s;
+     }
+     header div:first-child:hover{
+        transform:rotate(360deg);
+     }
+     header nav a{
+      color:#8a8d94;
+      font-size: 14px;
+      font-weight: bold;
+      padding:2px 20px 18px;
+      text-decoration: none;
+      transition:color 1s;
+     }
+     header nav a:hover{
+      color:#e74f4d;
+      border-bottom:2px solid #e74f4d;
+     }
+     header nav{
+         margin-top:16px;
+         margin-right:46px;
+          float:right;
+     }
+     .sign_icon{
+      color:#e74f4d;
+      background:#fff url(../img/login_in.png) no-repeat 20px -2px;
+      background-size:auto auto;
+      padding-left:35px;
+     }
+
+     /* --------------------第二部分 大banner---------------------*/
+     #container{
+          clear:both;
+          margin-top: 33px;
+     }
+
+     #banner{
+          min-width:100%;
+          height:691px;
+          background:#f00 url(../img/banner_one.jpg) no-repeat;
+          background-size: 100% 100%;
+          position: relative;
+     }
+     #banner h1{
+          font-size: 60px;
+          color:#fff;
+          position: absolute;
+          top:228px;
+          left:115px;
+     }
+     #banner p{
+          color:#fffdfd;
+          position:absolute;
+          left:122px;
+     }
+     #banner .p1{
+          top:308px;
+     }
+     #banner .p2{
+          top:338px;
+     }
+     #banner>div{
+          width:331px;
+          height:65px;
+          color:#fff;
+          font-size: 30px;
+          text-align: center;
+          line-height: 65px;
+          background-color:#e7504d;
+          position:absolute;
+          left:122px;
+          top:398px;
+          transition:transform 2s;
+     }
+      #banner>div:hover{
+          transform:scale(1.5,1.5);
+      }
+         /* --------------------第二部分 四个小说明---------------------*/
+       #intro>div{
+          width:25%;
+          height:250px;
+          font-size:14px;
+          color:#767777;
+          float:left;
+          -webkit-box-sizing:border-box;
+          position: relative;
+       }
+       .icon{
+          width:42px;
+          height:40px;
+          position: absolute;
+          left:140px;
+          top:46px;
+       }
+        .icon1{
+          background:#fff url(../img/circle.png) no-repeat center center;
+        }
+        .icon2{
+          background:#fff url(../img/flag.png) no-repeat center center;
+        }
+        .icon3{
+          background:#fff url(../img/flower.png) no-repeat center center;
+        }
+        .icon4{
+          background:#fff url(../img/four.png) no-repeat center center;
+        }
+         @-webkit-keyframes change_color{
+          0%{color:#f00;}
+          50%{color:#0f0;}
+          100%{color:#00f;}
+        }
+        @keyframes change_color{
+          0%{color:#f00;}
+          50%{color:#ff0;}
+          100%{color:#0ff;}
+        }
+        .slogan{
+          width:154px;
+          height:58px;
+          text-align: center;
+          line-height: 20px;
+          position: absolute;
+          top:135px;
+          left:89px;
+          padding-right:78px;
+        }
+        .slogan:hover{
+          -webkit-animation:change_color 2s linear 0.5s infinite alternate;
+          animation:change_color 2s linear 0.5s infinite  alternate;
+        }
+        .rborder{
+          border-right: 2px solid #aaa;
+        }
+
+    /* --------------------第二部分 搜索活动---------------------*/
+     #activity_infor{
+          width:100%;
+          clear:both;
+     }
+     #activity_infor>div:first-child{
+         width:100%;
+         height:361px;
+         background-color:#ededec;
+         font-size: 53.59px;
+         color: #8f8f8f;
+         position: relative;
+     }  
+     .logo_big{
+          width:91px;
+          height:92px;
+          background: #ededec url(../img/book_big.png) no-repeat center center;
+          margin:auto;
+          position: relative;
+          top:91px;
+     }
+     .logo_big+div{
+          text-align: center;
+          margin:150px auto;
+     }
+
+     .search_infor{
+          width:100%;
+          height:341px;
+          background:#f00 url(../img/banner_two.jpg) no-repeat center center;
+          background-size: 100% 100%;
+          position: relative;
+     }
+     .search_infor p{
+       color: #fff;
+     }
+     .search_infor p:first-child{
+          font-size: 21px;
+          text-align: center;
+          line-height: 131px;
+      }
+      .search_infor p:nth-child(3){
+        font-size: 12px;
+        color:#fff;
+        text-align: center;
+        margin-top: 20px;
+      }
+      div .white_underline{
+          width:31px;
+          height:3px;
+          background-color: #fff;
+          margin:-44px auto auto;
+      }
+
+
+      .search{
+          text-align: center;
+          margin-top: 52px;
+      }
+      .search>div{
+      	display:inline-block;
+      	position: relative;
+      }
+      #town,#province,#city{
+      	position: absolute;
+      	background-color: #e3e3e4;
+        z-index: 99;
+      }
+      .search  li{
+      	list-style: none;
+      	font-size: 12px;
+      	line-height: 27px;
+      	color: #323333;
+      	text-align: left;
+      	width:207px;
+      	height: 27px;
+      	padding-left: 25px;
+      }
+
+      
+      .search li:hover{
+       	background: #be4e48 url(../img/select_icon.png) no-repeat  left center;
+        color: #fff;
+       }
+      .search input,.search button{
+          width:236px;
+          height:37px;
+      }
+      .search button{
+          background-color:#be4e48; 
+          border:none;
+          font-size: 14px;
+          color:#fff;
+          word-spacing: 30px;
+      }
+
+      .search input{
+          margin-right: 26px;
+          padding-left: 10px;
+          color:#a8aaaa;
+          font-size: 12px;
+          border:2px solid transparent;
+          background:#fff url(../img/select_icon.png) no-repeat scroll 206px center;
+          -webkit-box-sizing:border-box;
+          -ms-box-sizing:border-box;
+          -moz-box-sizing:border-box;
+          -o-box-sizing:border-box;
+          box-sizing:border-box;
+
+          appearance:none;
+          -moz-appearance:none;
+          -webkit-appearance:none;
+      }
+
+      input::-ms-expand{
+          display: none;
+      }
+      
+
+      div.show,input.show{
+        border:2px solid #be4e48;
+        -webkit-box-sizing:border-box;
+          -ms-box-sizing:border-box;
+          -moz-box-sizing:border-box;
+          -o-box-sizing:border-box;
+          box-sizing:border-box;
+      }
+      div.show{
+      	border-top: none;
+      }
+      
+      input.show{
+      	border-bottom: none;
+      }
+
+      /*-------------------第二部分 城市活动-----------------*/
+      #city_activity{
+          height:603px;
+          width:100%;
+          background-color: #f8f8f8;
+          position: relative;
+      }
+      .father{
+          width:998px;
+          height:398px;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+      }
+      .father>div{
+          width:20%;
+          float:left;
+          padding-right: 6.25%;
+      }
+      .father>div:last-child{
+          padding-right: 0;
+      }
+
+      .pic_show{
+          border:1px solid #e0e0e0;
+          border-bottom:none;
+          padding:12px 10px;
+          width:100%;
+          height:337px;
+          background: #fff url(../img/pic_one.jpg) no-repeat center center;
+      }
+      .pic_show:nth-child(2){
+          background: #fff url(../img/pic_two.jpg) no-repeat center center;
+          border-bottom:1px solid #e0e0e0;
+          height:327px;
+      }
+       div:nth-child(3)>.pic_show:first-child{
+          background: #fff url(../img/pic_three.jpg) no-repeat center center;
+      }
+       div:nth-child(4)>.pic_show:first-child{
+          background: #fff url(../img/pic_four.jpg) no-repeat center center;
+      }
+
+      .title h3{
+          color:#4b4c4c;
+          font-size: 14px;
+          text-align: center;
+          line-height:40px;
+      }
+      .title h6{
+          color:#9f9f9f;
+          font-size: 11px;
+           text-align: center;
+          line-height:11px;
+      }
+
+      .shanghai h3{
+        font-size: 24px;
+        text-align:justify; 
+        text-justify:distribute-all-lines;
+        text-align-last:justify;
+        text-indent:10px;
+      }
+      .shanghai h6{
+        margin-bottom:10px 
+      }
+     /*---------------第二部分 new_life--------------------*/
+     #new_life .life_show{
+      width:75%;
+      height:560px;
+      background:#fff url(../img/banner_three.jpg) no-repeat center center;
+      background-size: 100% 100%;
+      float: left;
+      text-align: center;
+      color:#fff;
+     }
+
+     #new_life .life_show h3{
+      font-size: 49.47px;
+      margin-top: 134px;
+     }
+     #new_life .life_show h1{
+      font-size: 157.79px;
+      line-height: 130px;
+     }
+     #new_life .life_show h6{
+      font-size: 21.91px;
+      line-height: 94px;
+     }
+      #new_life .life_show h6:last-child{
+         line-height: 0;
+         margin-top: -4px;
+      }
+     
+     #new_life>div:last-child{
+      width:25%;
+      float:right;
+      height:560px;
+     }
+
+     #new_life>div h5{
+      color:#000;
+      font-size: 21.91px;
+      margin-top:160px;
+      text-align: center;
+     }
+
+     #new_life>div h5 span{
+      color:#e74f4d;
+     }
+
+     #new_life>div p{
+      font-size: 12px;
+      line-height: 30px;
+      color:#aaa;
+      width:290px;
+      margin:25px auto;
+     }
+
+     .more_details{
+      color:#e25c60;
+      font-size: 12px;
+      line-height: 31.36px;
+      font-weight: bold;
+      width:107px;
+      height:35px;
+      border:1px solid #e25c60;
+      text-align: center;
+      margin:48px auto;
+     }
+     .slide{
+      margin-top: -25px;
+      text-align: center;
+     }
+     .slide>span{
+      display: inline-block;
+      width:12px;
+      height:12px;
+      border:1px solid #929293;
+      border-radius: 6px;
+      margin-right:15px;
+     }
+      .slide>span:last-child{
+        margin-right:0;
+      }
+      .active,.slide>span:hover{
+        background-color: #929293;
+      }
+       /*-------------------第二部分 more-----------------*/
+     
+     #more{
+     	width:100%;
+     	clear:both;
+     	 font-size: 21px;
+     	 line-height: 30.36px;
+     }
+
+     #more>div{
+     	width:33.3%;
+        height:521px;
+        text-align: center;
+        float:left;
+     }
+     #more>div:first-child{
+        background-color: #e74f4d;
+        color:#fff;
+     }
+        #more>div:nth-child(2){
+        color:#000;
+     }
+     #more>div>a{
+     	width:170px;
+     	height:44px;
+     	border:1px solid #fff;
+     	padding:7px 30px;
+     	text-decoration: none;
+     }
+     #more>div:first-child a{
+        color:#fff;
+     }
+     #more>div:nth-child(2) a{
+        color:#e74f4d;
+        border-color: #e74f4d;
+     }
+     #more>div>div{
+     	width:31px;
+     	height:10px;
+     	border-top:3px solid #fff;
+     	margin:20px auto;
+     }
+      #more>div:nth-child(2)>div{
+        border-color: #abaaaa;
+     }
+
+     #more>div>h5{
+            margin-top:168px;
+     }
+     #more>div:last-child{
+        background: #f00 url(../img/banner_four.jpg) no-repeat center center;
+     	background-size: 100% 100%; 
+     }
+
+     /*-----------第二部分 志愿者-----------*/
+     #volunteer{
+     	clear:both;
+     	width:100%;
+     	height:750px;
+     }
+     #volunteer>div:first-child{
+      height:300px;
+      text-align: center;
+      font-size: 12px;
+      color:#aaa;
+     }
+     #volunteer>div:first-child h3{
+     	font-size: 21px;
+     	color:#323333;
+     	padding-top: 120px;
+     }
+      #volunteer>div:first-child>div{
+     	width:30px;
+        height:3px;
+        background-color: #e74f4d;
+        margin:10px auto;
+     }
+
+
+
+     #volunteer>div:last-child{
+     	width:100%;
+     	padding-left:130px;
+     }
+     #volunteer>div:last-child>div{
+     	float:left;
+     	height:285px;
+     }
+      #volunteer>div:last-child>.volunteer_more{
+     	width:300px;
+     	padding-right: 75px;
+     }
+      #volunteer>div:last-child>.form{
+     	width:800px;
+     }
+
+     
+     .volunteer_more>div>h5{
+     	font-size: 14px;
+     	color:#231815;
+     	padding-bottom: 18px;
+     	clear:both;
+     }
+     .volunteer_more>div>p,.volunteer_more>div>a{
+     	font-size: 12px;
+     	color:#8c8785;
+     	line-height: 20px;
+     }
+     .volunteer_more>div>a{
+     	float:right;
+     	margin-bottom: 20px;
+     	text-decoration: none;
+     }
+
+     .form{
+     	font-size: 12px;
+     	color:#231815;
+     }
+     .form span{
+     	display: inline-block;
+     	width:300px;
+     	background-color: #edecee;
+     	padding: 15px;
+        margin-left:18px;
+        margin-bottom: 18px;
+     }
+
+     .form input,textarea{
+     	border:none;
+     	background-color: transparent;
+     	font-size: 18px;
+     }
+     .form>div{
+     	width:685px;
+     	background-color: #edecee;
+     	height:100px;
+        margin-left:18px;
+        margin-bottom: 18px;
+      }
+      .form>div>span{
+      	margin:0;
+      	padding-top:10px;
+      	float:left;
+      }
+      .form>div>textarea{
+      	width:495px;
+      	height:85px;
+        float:right;
+        margin-right:13px;
+        margin-top: -33px;
+      }
+
+      .form input[type="submit"]{
+      	width:685px;
+      	height:30px;
+     	background-color: #edecee;
+        margin-left:18px;
+        font-size: 14px;
+        color: #323333;
+      }
+
+
+      /*---------------页脚----------*/
+      footer{
+      	color:#fff;
+      }
+      #contact_us{
+      	height:361px;
+      	background-color: #32353e;
+      	text-align: center;
+      }
+
+      #contact_us>h3{
+      	font-size: 21px;
+      	line-height:48.37px;
+      	padding-top: 90px;
+      }
+      #contact_us>p{
+      	font-size: 12px;
+      	line-height:18px;
+      	padding-bottom: 30px;
+      }
+      #contact_us>input[type="text"]{
+      	width:446px;
+      	height:41px;
+      	color:#aaa;
+      	font-size: 14px;
+      	padding-left: 10px;
+      	transform:translate(-5px,0);
+      }
+      #contact_us>input[type="submit"]{
+      	width:81px;
+      	height:45px;
+      	font-size: 15px;
+      	background-color: #6f7178;
+      	transform:translate(-9px,0);
+      	border:none;
+      	color:#fff;
+      }
+
+      footer>div:last-child{
+      	height:58px;
+      	background-color: #2f2f38;
+      }
+      .contact{
+      	margin-top: 36px;
+      }
+      .contact>a{
+      	color:transparent;
+      	width:25px;
+      	height:30px;
+      	padding:16px;
+      	margin-left: 10px;
+      }
+      .contact>a:first-child{
+      	background: transparent url(../img/qq.png) no-repeat center center;
+      }
+      .contact>a:nth-child(2){
+      	background: transparent url(../img/sina_weibo.png) no-repeat center center;
+      }
+       .contact>a:nth-child(3){
+      	background: transparent url(../img/twiter.png) no-repeat center center;
+      }
+      .contact>a:last-child{
+      	background: transparent url(../img/global.png) no-repeat center center;
+      }
+      
+      footer>div:last-child>span{
+      	display: inline-block;
+        margin-left: 98px;
+        margin-top: 27px;
+      }
+      footer>div:last-child>a{
+        margin-left:1025px;
+      }
+
+
+      /*-------------slide animation------------*/
+      @keyframes slide{
+        0%{transform:scale(0,0);}
+        100%{transform:scale(1,1);}
+      }
+       @-webkit-keyframes slide{
+        0%{-webkit-transform:scale(0,0);}
+        100%{-webkit-transform:scale(1,1);}
+      }
+
+      .slide_active{
+        animation:slide 3s ease-out 0s  1  alternate;
+      }
+
+
+
+      
+
+     
+     
+     
+
+
