@@ -174,14 +174,17 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$("#mySlide").carousel({
-			interval:1000
+			interval:3000
 		});
 
-		$(".text").eq(0).css("margin-top",($(".auto").eq(0).height()-$(".text").eq(0).height())/2+"px");
-		$(".text").eq(1).css("margin-top",($(".auto").eq(1).height()-$(".text").eq(1).height())/2+"px");
+		var setMarginTop=function () {
+	             $(".text").eq(0).css("margin-top",($(".auto").eq(0).height()-$(".text").eq(0).height())/2+"px");
+	             $(".text").eq(1).css("margin-top",($(".auto").eq(1).height()-$(".text").eq(1).height())/2+"px"); 
+	        } 
+	        
+		setMarginTop();
 		$(window).resize(function(){
-		$(".text").eq(0).css("margin-top",($(".auto").eq(0).height()-$(".text").eq(0).height())/2+"px");
-		$(".text").eq(1).css("margin-top",($(".auto").eq(1).height()-$(".text").eq(1).height())/2+"px");
+		setMarginTop();
 		});
 	</script>
 </body>
